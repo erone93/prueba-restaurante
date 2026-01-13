@@ -488,6 +488,84 @@
                 margin: 20px 0;
             }
         }
+
+
+/* --- ESTILOS BANNER COOKIES --- */
+.cookie-container {
+    position: fixed;
+    bottom: -100%; /* Escondido por defecto */
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    color: #3e2b26;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    z-index: 9999;
+    padding: 20px 50px;
+    transition: bottom 0.5s ease-in-out;
+}
+
+.cookie-container.show {
+    bottom: 0; /* Se desliza hacia arriba */
+}
+
+.cookie-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cookie-content p {
+    font-size: 0.9rem;
+    margin-right: 20px;
+}
+
+.cookie-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-cookie {
+    padding: 8px 25px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.btn-cookie.accept {
+    background-color: #c05029; /* El naranja de tu diseño */
+    color: white;
+}
+
+.btn-cookie.accept:hover {
+    background-color: #3e2b26;
+}
+
+.cookie-link {
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: underline;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cookie-content p {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+
+        
     </style>
 </head>
 <body>
@@ -752,6 +830,7 @@
 </body>
 
 </html>
+
 
 
 
