@@ -714,8 +714,44 @@
         <div>Hecho con <i class="fas fa-heart" style="color: #a04020;"></i> en Alcorcón</div>
     </footer>
 
+<div id="cookie-banner" class="cookie-container">
+    <div class="cookie-content">
+        <p>Utilizamos cookies propias y de terceros para mejorar tu experiencia y nuestros servicios. Al continuar navegando, consideramos que aceptas su uso.</p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="btn-cookie accept">Aceptar</button>
+            <a href="#" class="cookie-link">Leer más</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+
+        // Comprueba si el usuario ya aceptó las cookies antes
+        if (!localStorage.getItem('cookies-aceptadas')) {
+            // Si no hay registro, muestra el banner después de 1 segundo
+            setTimeout(() => {
+                banner.classList.add('show');
+            }, 1000);
+        }
+
+        // Al hacer clic en aceptar
+        acceptBtn.addEventListener('click', () => {
+            // Guarda la decisión en el almacenamiento local del navegador
+            localStorage.setItem('cookies-aceptadas', 'true');
+            // Esconde el banner
+            banner.classList.remove('show');
+        });
+    });
+</script>    
+
+
+    
 </body>
 
 </html>
+
 
 
